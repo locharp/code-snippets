@@ -1,7 +1,6 @@
 #include <iostream>
 
-std::string reverseString (std::string str )
-{
+std::string reverseString (std::string str ) {
   return std::string(str.rbegin(), str.rend());
 }
 
