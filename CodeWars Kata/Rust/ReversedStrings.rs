@@ -1,5 +1,5 @@
-fn reverse_string(phrase: &str) -> String {
-  phrase.rsplit("").collect()
+fn solution(phrase: &str) -> String {
+    phrase.chars().rev().collect::<String>()
 }
 
 fn main() {

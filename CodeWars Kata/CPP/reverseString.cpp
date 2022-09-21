@@ -1,7 +1,14 @@
-#include <iostream>
+#include <string>
+using namespace std ; 
 
-std::string reverseString (std::string str ) {
-  return std::string(str.rbegin(), str.rend());
+string reverseString (string str )
+{
+  // your Code is Here ... enjoy !!!
+  string s = "";
+  for (char ch : str)
+    s = ch + s;
+
+  return s;
 }
 
 int main() {
