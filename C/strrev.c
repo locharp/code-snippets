@@ -15,7 +15,7 @@ char *strrev (char *string)
   return string;
 }
 
-void reverse_string(char str[]) {
+void revstr(char str[]) {
   for (int i = 0, end = strlen(str) - 1; i <= end / 2; i++) {
     char ch = str[i];
     str[i] = str[end - i];
