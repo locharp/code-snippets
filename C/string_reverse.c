@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char *strrev (char *string)
+char *string_reverse (char *string)
 {
   int endIdx = strlen(string) - 1;
   char s[endIdx + 1];
@@ -15,16 +15,8 @@ char *strrev (char *string)
   return string;
 }
 
-void revstr(char str[]) {
-  for (int i = 0, end = strlen(str) - 1; i <= end / 2; i++) {
-    char ch = str[i];
-    str[i] = str[end - i];
-    str[end - i] = ch;
-  }
-}
-
 int main() {
   char *s = "Hello, world!";
-  printf("%s\n", strrev(s));
+  printf("%s\n", string_reverse(s));
 }
 
