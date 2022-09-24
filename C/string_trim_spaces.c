@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 
 char *string_trim_spaces(const char *str_in) {
   char *s = malloc((strlen(str_in) + 1) * sizeof(char));
