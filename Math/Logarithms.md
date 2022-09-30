@@ -1,0 +1,1 @@
+log<sub>b</sub>MN = log<sub>b</sub>M + log<sub>b</sub>N

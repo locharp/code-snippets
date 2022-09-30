@@ -1,11 +1,11 @@
-#include <stdlib.h>
+#include <stdio.h>
 
 char *are_you_playing_banjo(const char *name) {
   char *ret;
-  asprintf(&ret, "%s%s", name,
+  asprintf(&ret, "%s %s banjo", name,
 	   (name[0] == 'R' || name[0] == 'r')
-	   ? " plays banjo"
-	   : " does not play banjo");
+	   ? "plays"
+	   : "does not play");
   return ret;
 }
 
