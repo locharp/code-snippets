@@ -1,4 +1,4 @@
-from random import randint as rd
+from random import shuffle as u
 
 n=('Banker','You')
 s=('Banker has','You have')
@@ -18,7 +18,7 @@ def t():
  return t if t<22 else -1
 
 def r():
- h[p]+=[c:=d.pop(rd(0,len(d)-1))]
+ h[p]+=[c:=d.pop()]
  print(f"{n[p]} got {'an'if c=='A'else'a'} {c}.")
  
 def m():
@@ -27,6 +27,7 @@ def m():
 
 while input('\nNew game?(y)').lower()=='y':
  d=['A',2,3,4,5,6,7,8,9,10]*4;h=[[],[]]
+ u(d)
  p=0;m()
  p=1;r();m()
  while t()in range(21)and input('More?(y)').lower()=='y':

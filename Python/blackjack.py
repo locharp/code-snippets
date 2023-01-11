@@ -1,4 +1,4 @@
-from random import randint as rd
+from random import shuffle as sf
 
 name = ('Banker','You')
 has = ('Banker has','You have')
@@ -21,7 +21,7 @@ def pts():
   return points if points < 22 else -1
 
 def deal():
-  card=deck.pop(rd(0,len(deck)-1))
+  card=deck.pop()
   hand[p]+=[card]
   print(f"{name[p]} got {'an' if card[2:] == 'A' else 'a'} {card}.")
   
@@ -36,6 +36,7 @@ def more():
  
 while input('\nNew game? (y/n) ').lower() == 'y':
   deck = [s+str(v) for v in ('A',2,3,4,5,6,7,8,9,10)+faces for s in ('♠️','♥️','♠️','♦️')]
+  sf(deck)
   hand = [[],[]]
   p = 0; more()
   p = 1; deal(); more()
