@@ -1,5 +1,5 @@
 |Unit|Name|Equivalent|to|
----
+|---|
 |cm|Centimeters|1cm|=|37.8px|=|25.2/64in|
 |mm|Millimeters|1mm|=|1/10th|of|1cm|
 |Q|Quarter-millimeters|1Q|=|1/40th|of|1cm|
@@ -9,7 +9,7 @@
 |px|Pixels|1px|=|1/96th|of|1in|
 
 |Unit|Relative|to|
----
+|---|
 |em|Font|size|of|the|parent,|in|the|case|of|typographical|properties|like|font-size,|and|font|size|of|the|element|itself,|in|the|case|of|other|properties|like|width.|
 |ex|x-height|of|the|element's|font.|
 |ch|The|advance|measure|(width)|of|the|glyph|"0"|of|the|element's|font.|
