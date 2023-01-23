@@ -1,4 +1,4 @@
-ginputs <- readLines('https://raw.githubusercontent.com/locharp/code-snippets/main/AdventOfCode/2022/inputs/1')
+inputs <- readLines('https://raw.githubusercontent.com/locharp/code-snippets/main/AdventOfCode/2022/inputs/1')
 elves <- c()
 elf <- c()
 for (input in inputs) {
