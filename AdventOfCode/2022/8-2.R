@@ -13,7 +13,6 @@ check <- function(r, c, y=0L, my=0L, x=0L, mx=0L) {
         i <- i + y
         j <- j + x
     }
-    #(,'*', i-r+(j-c)
     return (abs(i-r+(j-c))-1L)
 }
 
