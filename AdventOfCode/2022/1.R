@@ -9,4 +9,4 @@ for (input in inputs) {
         elf <- c()
     }
 }
-cat(max(elves),'\n')
+max(elves)

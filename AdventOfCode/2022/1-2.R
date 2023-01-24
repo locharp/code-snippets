@@ -9,4 +9,4 @@ for (input in inputs) {
         elf <- c()
     }
 }
-cat(sum(sort(elves)[(length(elves)-2L):length(elves)]))
+sum(sort(elves)[(length(elves)-2L):length(elves)])
