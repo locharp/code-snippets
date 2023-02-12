@@ -17,7 +17,7 @@ No|&&|Logical `AND'
 |&#124;&#124;|Logical `AND'
 No|.. ...|Range (inclusive and exclusive)
 No|? :|Ternary if-then-else
-No| `÷= %= { /= -= += |= &= >>= <<= *= &&= ||= **=` |Assignment
+No| ` ÷= %= { /= -= += |= &= >>= <<= *= &&= ||= **= ` |Assignment
 No|defined?|Check if specified symbol defined
 No|not|Logical negation
 No|or and|Logical composition
