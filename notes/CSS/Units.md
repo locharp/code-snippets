@@ -1,4 +1,5 @@
-![Creative Commons Attribution-ShareAlike license (CC-BY-SA), v2.5 or any later version.](https://upload.wikimedia.org/wikipedia/commons/2/29/Cc-sa.svg)From [MDN Web Docs (Mozilla Developer Network)](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
+![Creative Commons Attribution-ShareAlike license (CC-BY-SA), v2.5 or any later version.](https://upload.wikimedia.org/wikipedia/commons/2/29/Cc-sa.svg)
+<div>From [MDN Web Docs (Mozilla Developer Network)](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)</div>
 |Unit|Name|Equivalent to|
 |---|---|---|
 |cm|Centimeters|1cm = 37.8px = 25.2/64in|
