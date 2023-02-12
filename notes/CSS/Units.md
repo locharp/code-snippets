@@ -1,5 +1,5 @@
 From [MDN Web Docs (Mozilla Developer Network)](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
-
+<img src='https://upload.wikimedia.org/wikipedia/commons/2/29/Cc-sa.svg' />
 &#127246;Creative Commons Attribution-ShareAlike license (CC-BY-SA), v2.5 or any later version.
 |Unit|Name|Equivalent to|
 |---|---|---|
