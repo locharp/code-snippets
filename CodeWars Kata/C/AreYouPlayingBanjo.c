@@ -1,18 +1,12 @@
-#include <stdlib.h>
+#include <stdio.h>
 
 char *are_you_playing_banjo(const char *name) {
   char *ret;
-  if (name[0] == 'R' || name[0] == 'r') {
-    ret = malloc((strlen(name) + 13) * sizeof(char));
-    strcpy(ret, name);
-    strcat(ret, " plays banjo");
-  } else {
-    ret = malloc((strlen(name) + 21) * sizeof(char));
-    strcpy(ret, name);
-    strcat(ret, " does not play banjo");
-  }
-  
-  return ret; // memory will be freed
+  asprintf(&ret, "%s %s banjo", name,
+	   (name[0] == 'R' || name[0] == 'r')
+	   ? "plays"
+	   : "does not play");
+  return ret;
 }
 
 int main() {
