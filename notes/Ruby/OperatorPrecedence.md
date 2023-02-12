@@ -10,11 +10,11 @@ Yes|* / %|Multiply, divide, and modulo
 Yes|+ -|Addition and subtraction
 Yes|>> <<|Right and left bitwise shift
 Yes|&|Bitwise `AND'
-Yes|^ ||Bitwise exclusive `OR' and regular `OR'
+Yes|^ &#124;|Bitwise exclusive `OR' and regular `OR'
 Yes|<= < > >=|Comparison operators
 Yes|<=> == === != =~ !~|Equality and pattern match operators (!= and !~ may not be defined as methods)
-No|&&|Logical `AND'
-No|&#124;&#124;|Logical `AND'
+No|&&|Logical AND
+No|&#124;&#124;|Logical OR
 No|.. ...|Range (inclusive and exclusive)
 No|? :|Ternary if-then-else
 No|<code>÷= %= { /= -= += |= &= >>= <<= *= &&= ||= **=</code>|Assignment
