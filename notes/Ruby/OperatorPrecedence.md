@@ -13,15 +13,15 @@ Yes|&|Bitwise `AND'
 Yes|^ ||Bitwise exclusive `OR' and regular `OR'
 Yes|<= < > >=|Comparison operators
 Yes|<=> == === != =~ !~|Equality and pattern match operators (!= and !~ may not be defined as methods)
- |&&|Logical `AND'
- |&#124;&#124;|Logical `AND'
-|.. ...|Range (inclusive and exclusive)
-|? :|Ternary if-then-else
-||÷= %= { /= -= += |= &= >>= <<= *= &&= ||= **=|Assignment
-|defined?|Check if specified symbol defined
-|not|Logical negation
-|or and|Logical composition
-|if unless while until|Expression modifiers
-|begin/end|Block expression
+No|&&|Logical `AND'
+|&#124;&#124;|Logical `AND'
+No|.. ...|Range (inclusive and exclusive)
+No|? :|Ternary if-then-else
+No|`÷= %= { /= -= += |= &= >>= <<= *= &&= ||= **=`|Assignment
+No|defined?|Check if specified symbol defined
+No|not|Logical negation
+No|or and|Logical composition
+No|if unless while until|Expression modifiers
+No|begin/end|Block expression
 
 Operators with a Yes in the method column are actually methods, and as such may be overridden.
