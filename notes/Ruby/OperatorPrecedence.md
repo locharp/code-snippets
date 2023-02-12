@@ -9,15 +9,15 @@ Yes|! ~ + -|Not, complement, unary plus and minus (method names for the last two
 Yes|* / %|Multiply, divide, and modulo
 Yes|+ -|Addition and subtraction
 Yes|>> <<|Right and left bitwise shift
-Yes|&|Bitwise `AND'
-Yes|^ &#124;|Bitwise exclusive `OR' and regular `OR'
+Yes|&|Bitwise AND
+Yes|^ &#124;|Bitwise exclusive OR and regular OR
 Yes|<= < > >=|Comparison operators
 Yes|<=> == === != =~ !~|Equality and pattern match operators (!= and !~ may not be defined as methods)
 No|&&|Logical AND
 No|&#124;&#124;|Logical OR
 No|.. ...|Range (inclusive and exclusive)
 No|? :|Ternary if-then-else
-No|<code>÷= %= { /= -= += |= &= >>= <<= *= &&= ||= **=</code>|Assignment
+No|÷= %= { /= -= += &#124;= &= >>= <<= *= &&= &#124;&#124;= **=|Assignment
 No|defined?|Check if specified symbol defined
 No|not|Logical negation
 No|or and|Logical composition
