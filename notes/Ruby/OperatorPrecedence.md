@@ -1,3 +1,5 @@
+From [Techotopia](https://www.techotopia.com/index.php/Ruby_Operator_Precedence)
+
 Ruby operators (highest to lowest precedence)
 Method|Operator|Description
 ---|---|---
@@ -11,15 +13,15 @@ Yes|&|Bitwise `AND'
 Yes|^ ||Bitwise exclusive `OR' and regular `OR'
 Yes|<= < > >=|Comparison operators
 Yes|<=> == === != =~ !~|Equality and pattern match operators (!= and !~ may not be defined as methods)
-&&|Logical `AND'
-|||Logical `AND'
-.. ...|Range (inclusive and exclusive)
-? :|Ternary if-then-else
-= %= { /= -= += |= &= >>= <<= *= &&= ||= **=|Assignment
-defined?|Check if specified symbol defined
-not|Logical negation
-or and|Logical composition
-if unless while until|Expression modifiers
-begin/end|Block expression
+|&&|Logical `AND'
+|&#124;&#124;|Logical `AND'
+|.. ...|Range (inclusive and exclusive)
+|? :|Ternary if-then-else
+||÷= %= { /= -= += |= &= >>= <<= *= &&= ||= **=|Assignment
+|defined?|Check if specified symbol defined
+|not|Logical negation
+|or and|Logical composition
+|if unless while until|Expression modifiers
+|begin/end|Block expression
 
 Operators with a Yes in the method column are actually methods, and as such may be overridden.
