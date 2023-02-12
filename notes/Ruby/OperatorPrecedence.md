@@ -13,8 +13,8 @@ Yes|&|Bitwise `AND'
 Yes|^ ||Bitwise exclusive `OR' and regular `OR'
 Yes|<= < > >=|Comparison operators
 Yes|<=> == === != =~ !~|Equality and pattern match operators (!= and !~ may not be defined as methods)
-|&&|Logical `AND'
-|&#124;&#124;|Logical `AND'
+ |&&|Logical `AND'
+ |&#124;&#124;|Logical `AND'
 |.. ...|Range (inclusive and exclusive)
 |? :|Ternary if-then-else
 ||÷= %= { /= -= += |= &= >>= <<= *= &&= ||= **=|Assignment
