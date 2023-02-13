@@ -1,0 +1,1 @@
+[My CodeWars profile](https://www.codewars.com/users/Lochard)
