@@ -1,2 +1,2 @@
 for i in range(int(input())):
-  print(round(float(input()), 2))
+  print("%.2f" % float(input()))
