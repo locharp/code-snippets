@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <title>imgbb API</title>
+    <script>        
+      function upload() {
+        const api_key = '';  // YOUR API KEY
+        const rs = document.getElementById('rs');
+        const file = document.getElementById('input_img').files[0];
+        const form = new FormData();
+        form.append('image', file);
+        settings = {
+          'method': 'post',
+          'body': form,
+        };
+
+        fetch(`https://api.imgbb.com/1/upload?key=${api_key}`, settings)
+          .then(res => res.json())
+          .then(jx => rs.innerHTML = (JSON.stringify(jx, null, 2)))
+          .catch(err => rs.innerHTML = ('Error: ' + err));
+      }
+    </script>
+  </head>  
+  <body>
+    <input type='file' id='input_img' accept='image/*' />
+    <button onclick='upload()'>Upload</button>
+    <span id='rs' style='overflow-wrap: break-word; font-size:12px;'></span>
+  </body>
+</html>
