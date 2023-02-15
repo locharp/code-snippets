@@ -1,0 +1,1 @@
+print(''.join(tuple(map(lambda c: chr(ord(c)+1), 
