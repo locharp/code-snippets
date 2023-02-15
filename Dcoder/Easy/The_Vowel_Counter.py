@@ -1,0 +1,1 @@
+print('hehhllo'.count('h' ,'o'))
