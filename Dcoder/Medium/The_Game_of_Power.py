@@ -4,9 +4,9 @@ def special(n):
   for i in range(2, int(n**.5) + 1):
     j = i * i
     while j <= n:
-      if j == n:            
+      if j == n:
         return True
-      j *= i        
+      j *= i
   return False
 
 def nearest(n):
