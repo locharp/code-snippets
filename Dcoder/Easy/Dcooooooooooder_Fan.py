@@ -1,0 +1,1 @@
+print('Dc' + 'o'*int(input()) + 'er')
