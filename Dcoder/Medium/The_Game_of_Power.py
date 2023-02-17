@@ -1,12 +1,12 @@
 def special(n):
   if n in range(8):
     return True if n in (1, 4) else False
-  for i in range(2, n//2):
+  for i in range(2, int(n**.5) + 1):
     j = i * i
     while j <= n:
-      if j == n:
+      if j == n:            
         return True
-      j *= i
+      j *= i        
   return False
 
 def nearest(n):
