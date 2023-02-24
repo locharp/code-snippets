@@ -1,1 +1,1 @@
-print('hehhllo'.count('h' ,'o'))
+print(len([v for v in input() if v in('aeiouAEIOU')]))

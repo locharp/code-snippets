@@ -1,1 +1,1 @@
-print(10000 // in
+print(10000 // int(input()))

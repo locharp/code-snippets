@@ -1,3 +1,3 @@
-#python 3.7.1
-
-print ("Hello, Dcoder!")
+for i in range(int(input())):
+  n, m = map(int, input().split())
+  print('No' if m % n else 'Yes')

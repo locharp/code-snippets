@@ -1,3 +1,1 @@
-b = bin(input())
-print(b)
-print(b * 2)
+[print('10'[int(i)], end='') for i in input()]
