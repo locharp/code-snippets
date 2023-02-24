@@ -1,2 +1,5 @@
 n = float(input())
-print(int(1 / (n % 1)))
+i = 1
+while n * i != int(n * i):
+  i += 1
+print(i)
