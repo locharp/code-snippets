@@ -1,0 +1,15 @@
+My code fails case #5 in "Which Century is it?"
+It seems to be about a 'nd' ventury.
+But I cannot figure out what's worng.
+Any idea?
+```
+century = (int(input()) + 99) // 100
+suffix = 'th'
+if century % 10 == 1:
+  suffix = 'st'
+elif century % 10 == 2:
+  suffix = 'nd'
+elif century % 10 == 3:
+  suffix = 'rd'
+print(str(century) + suffix)
+```
