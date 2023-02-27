@@ -1,6 +1,7 @@
-From [Wikipedia](https://en.m.wikipedia.org/wiki/Glossary_of_mathematical_symbols):
+Sources:
+[Wikipedia](https://en.m.wikipedia.org/wiki/Glossary_of_mathematical_symbols):
 
-Content is available under #copy[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless otherwise noted.
+Content is available under &copy; [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless otherwise noted.
 
 [RapidTables](https://www.rapidtables.com/math/symbols/Basic_Math_Symbols.html)
 
