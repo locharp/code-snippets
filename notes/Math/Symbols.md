@@ -19,5 +19,5 @@ U|Universe of discourse. The collection of objects being discussed in a specific
 ∁|Complement. With subacript: ∁<sub>A</sub>B = A∖B Without subscript: ∁A = ∁<sub>U</sub>A
 ×|Cartesian product. All pairs of an element of A and an element of B.
 ⊔|Diajoint union or diacriminates union
-∐|1. Alternative to ⊔. 2. Coproduct of mathematical structures or of objects in a category.
-#|1. Cardinality 2. Primorial 3. (Topology) Connected sum
+∐|<ol><li>Alternative to ⊔.</li><li>Coproduct of mathematical structures or of objects in a category.</li></ol>
+#|<ol><li>Cardinality</li><li>Primorial</li></li>(Topology) Connected sum</li></ol>
