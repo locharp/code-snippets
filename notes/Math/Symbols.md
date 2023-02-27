@@ -1,4 +1,5 @@
 From [Wikipedia](https://en.m.wikipedia.org/wiki/Glossary_of_mathematical_symbols)
+
 Content is available under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless otherwise noted.
 
 *Set Theory* 
