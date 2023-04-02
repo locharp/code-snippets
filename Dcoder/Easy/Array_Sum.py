@@ -1,3 +1,3 @@
 input()
 a = list(map(int, input().split()))
-print(sum(a) // a[-1])
+print(sum(a) % max(a))
