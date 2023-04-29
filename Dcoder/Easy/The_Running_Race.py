@@ -4,4 +4,4 @@ if x > y:
 elif y > x:
   print('Ryan')
 else:
-  print(draw
+  print('draw')
