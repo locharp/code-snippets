@@ -1,4 +1,4 @@
-with open("../datasets/input/2.txt") as file:
+with open("../datasets/inputs/2.txt") as file:
     inputs = []
     for line in file:
         inputs.append(list(map(int, line.split("x"))))
