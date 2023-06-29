@@ -1,0 +1,1 @@
+fun stringToNumber( str: String ): Int = str.toInt()
