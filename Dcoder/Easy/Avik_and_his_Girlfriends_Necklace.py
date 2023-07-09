@@ -1,2 +1,2 @@
 input()
-print' '.join(sorted(input().split())
+print(' '.join(sorted(input().split())))
