@@ -1,2 +1,2 @@
 s = input()
-[print(s[:i]) for i in range(len(s) + 1)]
+[print(s[:i+1]) for i in range(len(s))]
