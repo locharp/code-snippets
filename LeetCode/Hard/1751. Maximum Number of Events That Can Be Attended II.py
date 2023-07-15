@@ -10,11 +10,10 @@ class Solution:
             if j == 1:
                 return v
             
-            n = bisect_right( starts, e )
-            
             if ( i, j ) in d:
                 return d[( i, j )]
-            
+
+            n = bisect_right( starts, e )
             d[( i, j )] = v
             for o in range( n, m ):
                 d[( i, j )] = max( d[( i, j )], v + dfs( o, j - 1 ) )
