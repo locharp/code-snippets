@@ -1,6 +1,6 @@
 class BSTIterator:
 
-    def __init__(self, root: Optional[TreeNode]):
+    def __init__( self, root: Optional[TreeNode] ):
         self.a = []
         curr = root
         
@@ -8,7 +8,7 @@ class BSTIterator:
             self.a.append( curr )
             curr = curr.left
 
-    def next(self) -> int:
+    def next( self ) -> int:
         n = self.a.pop()
         curr = n.right
         
@@ -18,5 +18,5 @@ class BSTIterator:
             
         return n.val
 
-    def hasNext(self) -> bool:
+    def hasNext( self ) -> bool:
         return len( self.a ) > 0
