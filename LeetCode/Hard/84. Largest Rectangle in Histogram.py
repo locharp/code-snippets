@@ -8,21 +8,16 @@ class Solution:
             o = i
             
             while len( q ) > 0:
-                r, s = heappop( q )
-                
-                if heights[i] == -r:
-                    o = s
-                    break
-                elif heights[i] < -r:
-                    o = min( o, s )
-                    ans = max( ( i - s ) * -r, ans )
+                if heights[i] < q[-1][0]:
+                    r, o = q.pop()
+                    ans = max( ( i - o ) * r, ans )
                 else:
-                    heappush( q, ( r, s ) )
                     break
-                        
-            heappush( q, ( -heights[i], o ) )
+                    
+            if len( q ) < 1 or q[-1][0] != heights[i]:
+                q.append( ( heights[i], o ) )
             
         for i, j in q:
-            ans = max( ( n - j ) * -i, ans )
+            ans = max( ( n - j ) * i, ans )
             
         return ans
