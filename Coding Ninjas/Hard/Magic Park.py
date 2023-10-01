@@ -1,4 +1,4 @@
-from collections import *
+from collections import defaultdict
 
 def magicPart( x, n, x1, x2, y1, y2 ):
     d = defaultdict( list )
