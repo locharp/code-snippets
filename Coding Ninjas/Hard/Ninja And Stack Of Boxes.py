@@ -17,7 +17,7 @@ def ninjaAndBoxStack( l, b, h, n ):
         o = m( h[i], l[i] )
         a[o] = d[o] = max( d[o], b[i] )
         
-    c = sorted( a)
+    c = sorted( a )
     o = len( c )
     
     for i in range( o ):
