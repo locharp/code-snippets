@@ -1,18 +1,26 @@
+from collections import *
+
 class InfiniteArray:
     def __init__( self ):
-        self.a = [ False ] * 10000
+        self.d = defaultdict( self.f )
 
     def setAllTrue( self ) -> None:
-        self.a = [ True ] * 10000
+        self.d = defaultdict( self.t )
 
     def setAllFalse( self ) -> None:
-        self.a = [ False ] * 10000
+        self.d = defaultdict( self.f )
 
     def setIndexTrue( self, index: int ) -> None:
-        self.a[index] = True
+        self.d[index] = True
 
     def setIndexFalse( self, index: int ) -> None:
-        self.a[index] = False
+        self.d[index] = False
 
     def getIndex( self, index: int ) -> bool:
-        return self.a[index]
+        return self.d[index]
+    
+    def f( self ) -> bool:
+        return False
+    
+    def t( self ) -> bool:
+        return True
