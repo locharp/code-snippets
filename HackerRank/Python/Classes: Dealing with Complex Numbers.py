@@ -7,38 +7,52 @@ class Complex( Object ):
     
 
     def __add__( self, no ):
-        self.real += no.real
-        self.maginary += no.imaginary
-
+        real = self.real + no.real
+        imaginary = self.imaginary + no.imaginary
+        
+        return Complex( real, imarginary )
+        
     
 
     def __sub__( self, no ):
-        self.real -= no.real
-        self.imaginary -= no.imaginary
-
+        real = self.real - no.real
+        imaginary = self.imaginary - no.imaginary
+        
+        return Complex( real, imaginary )
+        
     
 
     def __mul__( self, no ):
-        self.real = self.real * no.real - self.imaginary * no.imaginary
-        self.imaginary = self.real * no.imaginary + self.imaginary * no.imaginary
-
+        real = self.real * no.real - self.imaginary * no.imaginary
+        imaginary = self.real * no.imaginary + self.imaginary * no.real
+        
+        return Complex( real, imaginary )
+        
     
 
     def __truediv__( self, no ):
-        d = math.pow( self.real, 2 ) + math.pow( self.imaginary, 2 )
-        n = self * Complex( no.real, -no.imaginary )
-        self.real = n.real / d
-        self.imaginary = n.imaginary / d
+        r = Complex( no.real, -no.imaginary )
+        d = ( no * r ).real
+        n = self * r
+        real = n.real / d
+        imaginary = n.imaginary / d
+
+        return Complex( real, imaginary )
+
 
 
     
     def __mod__( self ):
-        self.real = math.sqrt( math.pow( self.real ) + math.pow( self.imaginary ) )
-        self.imaginary = 0.0
+        real = math.sqrt( math.pow( self.real, 2 ) + math.pow( self.imaginary, 2 ) )
+        imaginary = 0.0
+
+        return Complex( real, imarginary )
 
     
     
     def __str__( self ):
+        result = ""
+        
         if self.imaginary == 0:
             result = "%.2f+0.00i" % ( self.real )
         elif self.real == 0:
@@ -51,7 +65,7 @@ class Complex( Object ):
         else:
             result = "%.2f-%.2fi" % ( self.real, abs( self.imaginary ) )
 
-        result
+        return result
 
 
 
