@@ -1,4 +1,5 @@
 def zigZagSubsequence( tokenArray, count = 1, i = 1, o = 0 ):
+    
     if i == len( tokenArray ):
         return count
     
