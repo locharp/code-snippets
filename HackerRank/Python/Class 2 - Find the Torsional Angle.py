@@ -21,7 +21,7 @@ class Points( Object ):
         y = self.y * no.y
         z = self.z * no.z
         
-        return Points( x, y, z )
+        return x + y + z
 
     
 
