@@ -8,4 +8,4 @@ def minimumCost( cost, n, k ):
 
 def maximumCost( cost, n, k ):
     
-    return sum( sorted( cost )[ -ceil( n / ( k + 1 ) ) ] )
+    return sum( sorted( cost )[ -ceil( n / ( k + 1 ) ) : ] )
