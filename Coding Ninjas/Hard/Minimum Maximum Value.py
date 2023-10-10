@@ -1,46 +1,114 @@
-from itertools import permutations
-
-def f( d, i ):
-    if d[i] != i:
-        d[i] = f( d, d[i] )
-        
-    return d[i]
-
-
-
 def minMaxValue( exp: str ) -> Tuple[int, int]:
-    
-    m, n = float( "-inf" ), float( "inf" )
+
     c = []
-    i = j = 0
-    ans = set()
+    i, j = -1, 0/
+    ans = [ float( "inf" ), 0 ]
     
     while j < len( exp ):
         if exp[j] == "+" or exp[j] == "*":
-            c.append( exp[ i: j ] )
+            c.append( [ exp[i], int( exp[ i + 1 : j ] ) ] )
             i = j
             
         j += 1
             
-    c.append( exp[ i : j ] )
-    c[0] = "+" + c[0]
-    o = len( c )
-    
-    for i in permutations( range( 1, o ) ):
-        e = [ i for i in c ]
-        d = { i: i for i in range( o ) }
-        
-        for j in i:
-            p = f( d, j - 1 )
-            q = f( d, j )
+    c.append( [ exp[i], int( exp[ i + 1 : j ] ) ] )
+    c[0][0] = "+"
+    d = [ [ [ i, j ] for i, j in c ] ]
+    e = []
+    i = 0
+
+    while i < len( c ):
+        if c[i][1] == 0:
+            o = False
+            q = i
             
-            if e[q][0] == "+":
-                e[p] = e[q] = e[p][0] + str ( int( e[p][ 1 : ] ) + int( e[q][ 1 : ] ) )
+            while q < len( c ) and c[q][1] == 0:
+                if c[q][0] == "*":
+                    o = True
+                    
+                q += 1
+                
+            if c[i][0] != "*" and c[q][0] != "*":
+                if q < len( c ) and o:
+                    c[q][0] = "*"
+                    
+                c = c[: i] + c[q:]
+                continue
+            elif q > i + 1:
+                c = c[ : i + 1 ] + c[ q : ]
+                
+            m = n = 1
+            p, q = i, i + 1
+            
+            while p > 0 and c[p][0] == "*":
+                p -= 1
+                m *= c[p][1]
+                    
+            while q < len( c ) and c[q][0] == "*":
+                n *= c[q][1]
+                q += 1
+                
+            if m > n:
+                c = c[ : i ] + c[ q : ]
             else:
-                e[p] = e[q] = e[p][0] + str ( int( e[p][ 1 : ] ) * int( e[q][ 1 : ] ) )
+                c = c[ : p ] + c[ i + 1 : ]
+                i = p
+                    
+        i += 1
+                    
+    i = 1
+    
+    while i < len( c ):
+        if c[i][0] == "+":
+            c[ i - 1 ][1] += c.pop( i )[1]
+        else:
+            i += 1
             
-            d[j] = p
+    if len( c ) > 0:
+        ans[1] = 1
+        
+        for i in c:
+            ans[1] *= i[1]
             
-        ans.add( int( e[0][ 1 : ] ) )
-     
-    return ( min( ans ), max( ans ) )
+    i = 0
+
+    while len( d ) > 0:
+        f = d.pop()
+        
+        while i < len( f ):
+            if f[i][1] == 0:
+                if i + 1 < len( f ) and f[ i + 1 ] == [ "*", 0 ]:
+                    s.append( f[ : i + 1 ] )
+                    s.append( f[ i + 1 : ] )
+                    break
+                
+                m = n = 1
+                q =  i + 1
+                p = 0 if f[i][0] == "*" else i
+                
+                if q != len( f ) and f[q][0] == "*":
+                    q = len( f )
+                
+                if q < len( f ):
+                    f[ q - 1 ][0] = f[i][0]
+                    
+                f = f[ : p ] + f[ q : ]
+                i = p
+            
+            i += 1
+            
+        e.append( f )
+    
+    for f in e:
+        i = 1
+        
+        while i < len( d ):
+            if f[i][0] == "*":
+                f[ i - 1 ][1] *= f.pop( i )[1]
+            else:
+                i += 1
+
+    for f in e:
+        ans[0] = min( ans[0], sum( i[1] for i in f ) )
+
+    return ans
