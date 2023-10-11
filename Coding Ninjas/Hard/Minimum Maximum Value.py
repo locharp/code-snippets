@@ -13,7 +13,8 @@ def minMaxValue( exp: str ) -> Tuple[ int, int ]:
             
         j += 1
         
-    c[0][0] = "+"
+    c.append( [ exp[i], int( exp[ i + 1 : ] ) ] )
+    c[0][0] = "*"
     d = [ [ [ i, j ] for i, j in c ] ]
     e = []
     i = 0
@@ -49,7 +50,9 @@ def minMaxValue( exp: str ) -> Tuple[ int, int ]:
                 n *= c[q][1]
                 q += 1
                 
-            if m > n:
+            if p < 1 and q == len( c ):
+                c = []
+            elif i < 1 or m > n:
                 c = c[ : i ] + c[ q : ]
             else:
                 c = c[ : p ] + c[ i + 1 : ]
@@ -104,8 +107,8 @@ def minMaxValue( exp: str ) -> Tuple[ int, int ]:
                 f[ i - 1 ][1] *= f.pop( i )[1]
             else:
                 i += 1
-                
+
     for f in e:
         ans[0] = min( ans[0], sum( i[1] for i in f ) )
         
-    return ans
+    return ans 
