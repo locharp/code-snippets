@@ -10,14 +10,12 @@ def quick_sort( head ):
             next.next = curr
             curr.prev = next
             next = curr
-            curr.next = None
         else:
             prev.prev = curr
             curr.next = prev
             prev = curr
-            curr.prev = None
             
-        next.next = None
+        prev.prev = next.next = None
         curr = temp
         
     if next is not head:
@@ -33,7 +31,7 @@ def quick_sort( head ):
         head.prev = m[1]
         prev = m[0]
         
-    return ( prev, next )  
+    return ( prev, next )
 
 
 
