@@ -1,4 +1,5 @@
-def distinctStrings( arr,n ):
+def distinctStrings( arr, n ):
+    
     s = set()
     
     for a in arr:
