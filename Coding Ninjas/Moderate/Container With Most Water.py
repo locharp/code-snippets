@@ -1,4 +1,5 @@
 def maxArea( height ):
+    
     ans = m = 0
     n = len( height ) - 1
     
