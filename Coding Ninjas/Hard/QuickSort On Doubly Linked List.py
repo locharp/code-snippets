@@ -15,9 +15,10 @@ def quick_sort( head ):
             curr.next = prev
             prev = curr
             
-        prev.prev = next.next = None
         curr = temp
         
+    prev.prev = next.next = None
+             
     if next is not head:
         n = quick_sort( head.next )
         n[0].prev = head
