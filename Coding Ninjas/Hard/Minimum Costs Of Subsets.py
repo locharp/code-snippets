@@ -1,5 +1,5 @@
 from collections import *
-from itertools import *
+from sortedcontainers import *
 
 def minimumCostsubsets( arr, n, k ):
 
@@ -9,40 +9,31 @@ def minimumCostsubsets( arr, n, k ):
     m = n // k
     a = [ [] for i in range( k ) ]
     r, s = 0, float( "inf" )
-    c= Counter( arr )
-    d = []
-
+    c = Counter( arr )
+    d = SortedList()
+    
     for i, j in c.items():
         if j > k:
             return -1
         elif j < k:
             d += [ i ] * j
         else:
-            r = max( r, i )
-            s = min( s, i )
-            m -= 1
+            for j in a:
+                j.append( i )
     
-    if m < 1:
-        return ( r - s ) * k
+    for i in range( ( k + 1 ) // 2 ):
+        s = SortedSet( d )
+    
+        for j in range( len( a[i] ), m ):
+            p = s.pop( 0 )
+            d.remove( p )
+            a[i].append( p )
 
-    ans = 2 ** 31
-
-    for p in permutations( d ):
-        total = 0
-        t = True
+        s = SortedSet( d )
         
-        for i in range( 0, len( p ), m ):
-            u, v = r, s
-
-            if len( set( p[ i : i + m ] ) ) < m:
-                t = False
-                break
-                
-            u = max( p[ i : i + m ] + ( u, ) )
-            v = min( p[ i : i + m ] + ( v, ) )
+        for j in range( len( a[ k - i - 1 ] ), m ):
+            p = s.pop( -1 )
+            d.remove( p )
+            a[ k - i - 1 ].append( p )
             
-            total += u - v
-        if t:    
-            ans = min( ans, total )
-        
-    return ans
+    return sum( max( i ) - min( i ) for i in a )
