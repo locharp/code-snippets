@@ -1,7 +1,6 @@
 def infixToPostfix( exp: str ) -> str:
     
     a, ans = [], []
-    i = 0
     
     for i in exp:
         if i == "^":
