@@ -1,12 +1,14 @@
 def is_prime( n ):
-    if n < 4 or n % 2 == 0:
-        return true
-
+    if n < 4:
+        return True
+    elif n % 2 == 0:
+        return False
+        
     for i in range( 3, n // 2, 2 ):
         if n % i == 0:
             return False
 
-    return true
+    return True
 
 
     
