@@ -3,25 +3,25 @@ def infixToPostfix( exp: str ) -> str:
     a, ans = [], []
     i = 0
     
-    while i < len( exp ):
-        if exp[i] == "^":
+    for i in exp:
+        if i == "^":
             while len( a ) > 0 and a[-1] == "^":
                 ans.append( a.pop() )
                 
-            a.append( exp[i] )
-        elif exp[i] in "*/":
+            a.append( i )
+        elif i in "*/":
             while len( a ) > 0 and a[-1] in "*/^":
                 ans.append( a.pop() )
                 
-            a.append( exp[i] )
-        elif exp[i] in"+-":
+            a.append( i )
+        elif i in"+-":
             while len( a ) > 0 and a[-1] != "(":
                 ans.append( a.pop() )
                 
-            a.append( exp[i] )
-        elif exp[i] == "(":
-            a.append( exp[i] )
-        elif exp[i] == ")":
+            a.append( i )
+        elif i == "(":
+            a.append( i )
+        elif i == ")":
             while len( a ) > 0:
                 j = a.pop()
                 
@@ -30,10 +30,8 @@ def infixToPostfix( exp: str ) -> str:
                 else:
                     ans.append( j )
         else:
-            ans.append( exp[i] )
+            ans.append( i )
             
-        i += 1
-    
     ans += a[ : : -1 ]
     
     return "".join( ans )
