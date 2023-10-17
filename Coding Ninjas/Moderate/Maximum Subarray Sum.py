@@ -1,4 +1,4 @@
-def maxSubarraySum(arr, n) :
+def maxSubarraySum( arr, n ) :
 
     c = m = 0
 
