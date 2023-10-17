@@ -32,7 +32,7 @@ class UnionFind:
     def union( self, child, parent ):
         parent = self.find_parent( parent )
 
-        if parent == -1 or self.parents[child] != -1:
+        if self.parents[child] != -1:
             return False
 
         self.parents[child] = parent
@@ -49,12 +49,10 @@ class Solution:
         union = UnionFind( n )
         children = set( leftChild + rightChild )
         children.discard( -1 )
-        roots = union.find_roots( children )
+        parents = union.find_roots( children )
 
-        if len( roots ) != 1:
+        if len( parents ) != 1:
             return False
-
-        parents = deque( roots )
 
         while len( parents ) > 0:
             parent = parents.pop()
@@ -64,6 +62,6 @@ class Solution:
                     if not union.union( child, parent ):
                         return False
                     else:
-                        parents.append( child )
+                        parents.add( child )
                     
         return union.size == n
