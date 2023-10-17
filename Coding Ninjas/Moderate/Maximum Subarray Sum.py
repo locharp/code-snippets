@@ -7,7 +7,6 @@ def maxSubarraySum(arr, n) :
 
         if c > m:
             m = c
-            q = i
         elif c < 0:
             c = 0
 
