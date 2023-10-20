@@ -1,23 +1,23 @@
-def f( a, d, m ):
-    if len( a ) == m:
-        return a
+from collections import *
+
+def f( d, m, n, o ):
+    
+    if n == m:
+        return [ o ]
         
-    for i in d[ a[-1] ]:
-        d[ a[-1] ].remove( i )
-        d[i].remove( a[-1] )
-        a.append( i )
+    for i in d[o]:
+        d[o].remove( i )
+        d[i].remove( o )
         
+        ans = f( d, m, n + 1, i )
         
-        ans = f( a, d, m )
+        if ans != -1:
+            return [ o ] + ans
         
-        if ans[0] != -1:
-            return ans
+        d[o].append( i )
+        d[i].append( o )
         
-        a.pop()
-        d[ a[-1] ].append( i )
-        d[i].append( a[-1] )
-        
-    return [ -1 ]
+    return -1
     
     
 def printEulerPath( n, edgeList ):
@@ -25,14 +25,13 @@ def printEulerPath( n, edgeList ):
     d = defaultdict( list )
     
     for i, j in edgeList:
-        a[j].append( i )
         d[i].append( j )
         d[j].append( i )
         
     for i in range( n ):
-        ans = f( [ i ], d, len( edgeList ) + 1 )
+        ans = f( d, len( edgeList ), 0, i )
         
-        if ans[0] != -1:
+        if ans != -1:
             return ans
     
     return [ -1 ]
