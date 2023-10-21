@@ -1,21 +1,19 @@
-from sortedcontainers import SortedList
+from bisect import bisect_left
 
 def nextPermutation( permutation, n ):
     
     m = permutation[ -1 ]
-    a = SortedList()
+    a = []
 
     while len( permutation ) > 0:
-        k = permutation.pop()
+        p = permutation.pop()
+        j = bisect_left( a, p )
+        
+        if j < len( a ):
+            permutation.append( a.pop( j ) )
+            a.insert( j, p )
+            return permutation + a
 
-        for i in range( len( a ) ):
-            if a[i] > k:
-                permutation.append( a.pop( i ) )
-                a.add( k )
-                permutation.extend( a )
-
-                return permutation
-
-        a.add( k )
+        a.insert( j, p )
 
     return a
