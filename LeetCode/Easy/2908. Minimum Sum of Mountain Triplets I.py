@@ -1,6 +1,28 @@
+class Solution:
+
+    def minimumSum( self, nums: List[int] ) -> int:
+        n = len( nums ) - 1
+        ans = x = inf
+
+        for i in range( len( nums ) - 2 ):
+            if nums[i] < x:
+                x = nums[i]
+
+                for j in range( i + 1, n ):
+                    if nums[j] > nums[i]:
+                        y = nums[j]
+                        
+                        for k in range( j + 1, len( nums ) ):
+                            if nums[k] < nums[j]:
+                                ans = min( ans, nums[i] + nums[j] + nums[k] )
+        
+        return ans if ans != inf else -1
+
+
+
 from sortedcontainers import SortedSet
 
-class Solution:
+class Solution2:
 
     def minimumSum( self, nums: List[int] ) -> int:
 
