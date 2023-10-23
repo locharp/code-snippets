@@ -1,0 +1,6 @@
+def replace_exclamation( s ):
+    
+    for ch in "AEIOUaeiou":
+        s = s.replace( ch, "!" )
+        
+    return s
