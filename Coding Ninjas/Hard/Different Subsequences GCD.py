@@ -33,7 +33,6 @@ def differentGCDSubsequence( arr ):
                 
             c = gcd( j, k )
             d.add( c )
-
             s.discard( c )
 
     return len( d )
