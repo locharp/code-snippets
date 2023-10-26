@@ -5,8 +5,7 @@ def f( x, y, m, n, o ):
     if m == y:
         return n + m * o
 
-    return f( x, y, m + 1,
-     n + m * x * o / 100, o * ( 1 - x / 100 ) )
+    return f( x, y, m + 1, n + m * x * o / 100, o * ( 1 - x / 100 ) )
 
 
 
