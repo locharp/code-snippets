@@ -1,4 +1,4 @@
-def deja_vu(n: int, w: List[int], k: int) -> int:
+def deja_vu( n: int, w: List[int], k: int ) -> int:
     
     a = w[ : 1 ]
     s = set()
