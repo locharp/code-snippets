@@ -14,6 +14,4 @@ def solution( inputString ):
         if i < 0 or i > 255:
             return False
             
-            
-            
     return True
