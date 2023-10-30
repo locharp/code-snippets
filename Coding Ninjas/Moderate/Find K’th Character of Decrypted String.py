@@ -12,7 +12,7 @@ def kThCharaterOfDecryptedString( s, k ):
             k -= ( j - i ) * int( s[ j : o ] )
 
             if k <= 0:
-                return s[ j - ( k % ( j - i ) ) - 1 ]
+                return s[ i + ( ( k - 1 ) % ( j - i ) ) ]
 
             i = o
 
