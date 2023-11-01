@@ -9,7 +9,7 @@ def countOf3( x ):
         
     for i in range( m ):
         if s[i] > "3":
-            ans += 10 * a[ m - i ]
+            ans += 10 ** ( m - i )
         elif s[i] == "3":
             ans += x % 10 ** ( m - i ) + 1
             
