@@ -4,4 +4,7 @@ def find_next_square( sq ):
     
     sq = sqrt( sq )
     
-    return floor( pow( sq + 1, 2 ) ) if sq.is_integer() else -1
+    if sq.is_integer():
+        return floor( pow( sq + 1, 2 ) )
+    else:
+        return -1
