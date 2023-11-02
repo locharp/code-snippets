@@ -29,6 +29,7 @@ def get_leftover_of_bills( budget, denomination ):
 
 
 def exchangeable_value( budget, exchange_rate, spread, denomination ):
+    
     exchange_rate_with_spread = exchange_rate * ( 1 + spread / 100 )
     exchanged_value = exchange_money( budget, exchange_rate_with_spread )
     number_of_bills = get_number_of_bills( exchanged_value, denomination )
