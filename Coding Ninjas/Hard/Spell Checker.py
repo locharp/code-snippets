@@ -1,30 +1,50 @@
 from collections import *
 
-def spellChecker( dictionary, query ):
+def smallestWindow( s, x ):
+    
+    c = Counter( x )
+    d = defaultdict( list )
+    u = v = 0
+    t = len( x ) - 1
 
-    d = defaultdict( set )
+    while s[u] not in c:
+        u += 1
 
-    for i in dictionary:
-        j = 0
+    v = u
+    c[ s[u] ] -= 1
+
+    while t > 0:
+        v += 1
+
+        if s[v] in c:
+            if c[ s[v] ] > 0:
+                t -= 1
+                
+            c[ s[v] ] -= 1
+
+    while c[ s[u] ] < 0:
+        c[ s[u] ] += 1
+        u += 1
         
-        while j < len( query ):
-            if j == len( i ) or i[j] != query[j]:
-                break
-            
-            j += 1
-        
-        if j == len( query ) and j == len( i ):
-            return [ "CORRECT" ]
+        while s[u] not in c:
+            u += 1
 
-        d[j].add( i )
-        
-    ans = sorted( d[ max( d ) ] )
-    i = 1
+    v -= u
+    t = u
+    
+    for i in range( u + v + 1, len( s ) ):
+        if s[i] in c:
+            c[ s[i] ] -= 1
 
-    while i < len( ans ):
-        if ans[ i - 1 ] == ans[i][ : len( ans[ i - 1 ] ) ]:
-            ans.pop( i )
-        else:
-            i += 1
+            while c[ s[t] ] < 0:
+                c[ s[t] ] += 1
+                t += 1
+                
+                while s[t] not in c:
+                    t += 1
 
-    return ans
+            if v > i - t:
+                u = t
+                v = i - t
+
+    return s[ u : u + v + 1 ]
