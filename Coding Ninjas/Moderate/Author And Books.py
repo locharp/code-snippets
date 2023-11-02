@@ -1,6 +1,6 @@
 from string import ascii_uppercase
 
-def arrangeAuthors(s):
+def arrangeAuthors( s ):
     
     A = "A" + ascii_uppercase
     a = []
