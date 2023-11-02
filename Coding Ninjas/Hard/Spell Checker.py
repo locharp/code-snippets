@@ -15,26 +15,16 @@ def spellChecker( dictionary, query ):
         
         if j == len( query ) and j == len( i ):
             return [ "CORRECT" ]
+
+        d[j].add( i )
+        
+    ans = sorted( d[ max( d ) ] )
+    i = 1
+
+    while i < len( ans ):
+        if ans[ i - 1 ] == ans[i][ : len( ans[ i - 1 ] ) ]:
+            ans.pop( i )
         else:
-            if j == 0:
-                d[j].add( i )
-            else:
-                t = True
-                o = ""
+            i += 1
 
-                for k in d[j]:
-                    if i[j] == k[j]:
-                        if len( i ) < len( k ):
-                            o = k
-                        else:
-                            t = False
-
-                        break
-                        
-                if t:
-                    if o != "":
-                        d[j].remove( o )
-
-                    d[j].add( i )
-                    
-    return sorted( d[ max( d ) ] )
+    return ans
