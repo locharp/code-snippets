@@ -5,6 +5,7 @@ def linearProbing( keys ):
     
     for i in keys:
         j = i % n
+        
         if ans[j] < 0:
             ans[j] = i
         else:
