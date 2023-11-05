@@ -6,9 +6,9 @@ def compareVersions( a, b ):
     m = min( len( u ), len( v) )
 
     while i < m:
-        if u[i] > v[i]:
+        if int( u[i] ) > int( v[i] ):
             return 1
-        elif v[i] > u[i]:
+        elif int( v[i] ) > int( u[i] ):
             return -1
 
         i += 1
