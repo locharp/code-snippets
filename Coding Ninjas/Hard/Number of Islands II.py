@@ -5,21 +5,22 @@ class DSU:
         self.roots = [ [ [ i, j ] for j in range( m ) ] for i in range( n ) ]
         self.sizes = [ [ 1 ] * m for i in range( n ) ]
         self.count = 0
+        
 
 
     def find( self, n ):
-        
-        if self.roots[ n[0] ][ n[1] ] != n:
-            self.roots[ n[0] ][ n[1] ] = self.find( self.roots[ n[0] ][ n[1] ] )
 
-        return self.roots[ n[0] ][ n[1] ]
-        
-        
+        if self.roots[ n[0] ][ n[1] ] != n:
+            self.roots[ n[0] ][n[1] ] = self.find( self.roots[ n[0] ][ n[1] ] )        
+
+        return self.roots[ n[0] ][n[1] ]
+
+
 
     def union( self, n, m ):
         root_n = self.find( [ n[0], n[1] ] )
         root_m = self.find( [ m[0], m[1] ] )
-        
+
         if root_n == root_m:
             return
 
@@ -32,9 +33,7 @@ class DSU:
 
         self.count -= 1
 
-        return self.count
 
-        
 
 
         
@@ -44,7 +43,7 @@ def numOfIslandsII( n, m, q ):
     dr = [ [ 1, 0 ], [ 0, 1 ], [ -1, 0 ], [ 0, -1 ] ]
     a = [ [ 0 ] * m for i in range( n ) ]
     ans = []
-    
+
     for i, j in q:
         if a[i][j] == 0:
             a[i][j] = 1
