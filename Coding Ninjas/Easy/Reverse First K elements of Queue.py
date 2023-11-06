@@ -13,7 +13,7 @@ def reverseElements( q, k ):
     
     f( q, k )
 
-    for i in range( q.size() - k ):
+    for i in range( q.qsize() - k ):
         q.put( q.get() )
 
     return q
