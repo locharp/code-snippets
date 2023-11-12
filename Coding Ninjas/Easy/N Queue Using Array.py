@@ -1,8 +1,3 @@
-from os import *
-from sys import *
-from collections import *
-from math import *
-
 class NQueue:
     
     def __init__( self, n, s ):
