@@ -33,6 +33,7 @@ def countChildren( n: int, friends: List[ List[int] ], m: int, chocolates: List[
                     w.add( j )
                 else:
                     t.update( w )
+                    continue
         
         if t is None:
             z.append( { i, j } )
