@@ -13,11 +13,11 @@ def f( root, a, i ):
 
 def kDistance( root, target, k ):
 
-    p = []
-    q = []
-    f( root.left, p, 0 )
-    f( root.right, q, 0 )
-    a = p[ : : -1 ] + [ [ root.data ] ] + q
+    a = []
+    f( root.left, a, 0 )
+    a.reverse()
+    a.append( [ root.data ] )
+    f( root.right, a, len( a ) )
     ans = []
 
     for i in range( len( a ) ):
