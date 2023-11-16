@@ -3,7 +3,7 @@ def handleAll( n ):
     a = []
     c = [ "", "one", "two", "three" ,"four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "", ]
     d = [ "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" ]
-    e = [ "", "", "hundred", "thousand", "", "lakh", "million", "", "hundred" ]
+    e = [ "", "", "hundred", "thousand", "", "lakh", "", "crore", "" ]
     ans = []
     
     while n > 0:
@@ -14,10 +14,10 @@ def handleAll( n ):
         if e[i] != "":
             ans.append( e[i] )
         
-        if i % 3 == 0 and i + 1 < len( a ) and a[ i + 1 ] == 1:
-                ans.append( c[ a[ i + 1 ] * 10 + a[i] ] )
+        if ( i == 0 or i > 2 and ( i - 3 ) % 2 == 0 ) and i + 1 < len( a ) and a[ i + 1 ] == 1:
+                ans.append( c[ a[i] + 10 ] )
                 a[ i + 1 ] = 0
-        elif i % 3 == 1:
+        elif i == 1 or i > 3 and ( i - 3 ) % 2 == 1:
             if d[ a[i] ] != "":
                 ans.append( d[ a[i] ] )
         else:
