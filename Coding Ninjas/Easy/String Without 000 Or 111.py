@@ -18,6 +18,7 @@ def f( a, m, n, o ):
         n -= 2
         
     return f( a, m, n, 1 - o )
+    
         
         
 def strThree0Three1( m, n ):
