@@ -1,4 +1,3 @@
-Imports System.Collections.Generic
 Imports System.Numerics
 
 Public Module Kata
@@ -18,7 +17,9 @@ Public Module Kata
             Return fibs( n )
         End If
         
-        Return Fibonacci( n - 1 ) + Fibonacci( n - 2 )
+		fibs.Add( Fibonacci( n - 1 ) + Fibonacci( n - 2 ) )
+
+		Return fibs.Last
         
     End Function
     
@@ -30,7 +31,9 @@ Public Module Kata
             Return tris( n )
         End If
         
-        Return Tribonacci( n - 1 ) + Tribonacci( n - 2 ) + Tribonacci( n - 3 )
+		tris.Add( Tribonacci( n - 1 ) + Tribonacci( n - 2 ) + Tribonacci( n - 3 ) )
+		
+		Return tris.Last
         
     End Function
     
@@ -42,7 +45,9 @@ Public Module Kata
             Return tets( n )
         End If
         
-        Return Tetranacci( n - 1 ) + Tetranacci( n - 2 ) + Tetranacci( n - 3 ) + Tetranacci( n - 4 )
+        tets.Add( Tetranacci( n - 1 ) + Tetranacci( n - 2 ) + Tetranacci( n - 3 ) + Tetranacci( n - 4 ) )
+		
+		Return tets.Last
         
     End Function
     
@@ -53,7 +58,9 @@ Public Module Kata
             Return pads( n )
         End If
         
-        Return Padovan( n - 1 ) + Padovan( n - 2 ) + Padovan( n - 3 )
+        pads.Add( Padovan( n - 2 ) + Padovan( n - 3 ) )
+		
+		Return pads.Last
         
     End Function
     
@@ -65,19 +72,23 @@ Public Module Kata
             Return jacs( n )
         End If
         
-        Return Jacobsthal( n - 1 ) + ( 2 * Jacobsthal( n - 2 ) )
+        jacs.Add( Jacobsthal( n - 1 ) + ( 2 * Jacobsthal( n - 2 ) ) )
+		
+		Return jacs.Last
         
     End Function
     
-
-
+    
+    
     Function Pell( n As Integer ) As BigInteger
     
         If n < pels.Count
             Return pels( n )
         End If
         
-        Return ( 2 * Pell( n - 1 ) ) + Pell( n - 2 )
+        pels.Add( ( 2 * Pell( n - 1 ) ) + Pell( n - 2 ) )
+		
+		Return pels.Last
         
     End Function
     
@@ -86,15 +97,20 @@ Public Module Kata
     Public Function Mixbonacci( pattern as String(), length as Integer ) As BigInteger()
         
         Dim ans( length - 1 ) As BigInteger
+        Dim n = pattern.GetLength( 0 )
         Dim fib = 0, tri = 0, tet = 0
         Dim pad = 0, jac = 0, pel = 0
-                                
+        
+        If length = 0 Or n = 0
+            Return  New BigInteger() {}
+        End If
+        
         For i = 0 To length - 1
-            Select Case pattern( i )
+            Select Case pattern( i Mod n )
                 Case "fib"
                     ans( i ) = Fibonacci( fib )
                     fib += 1
-                Case "fib"
+                Case "tri"
                     ans( i ) = Tribonacci( tri )
                     tri += 1
                 Case "tet"
@@ -118,4 +134,4 @@ Public Module Kata
     
     
     
-End Module 
+End Module
