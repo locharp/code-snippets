@@ -1,10 +1,7 @@
 def countTriplets( head, x, n = 0 ):
     
     if n > 2:
-        if x == 0:
-            return 1
-        else:
-            return 0
+        return 1 if x == 0 else 0
     elif head == None or x - head.data < 0:
         return -1
     
@@ -14,10 +11,6 @@ def countTriplets( head, x, n = 0 ):
     
     while curr != None and y > 0:
         y = x - curr.data
-        
-        if y < 0:
-            break
-            
         t = countTriplets( curr.next, x - curr.data, n + 1 )
         
         if t < 0:
