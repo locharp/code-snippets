@@ -6,10 +6,11 @@ def f( a, s, i, j ):
         return a[i][j]
 
     if s[i] == s[j]:
-        return f( a, s, i + 1, j - 1 )
+        a[i][j] = f( a, s, i + 1, j - 1 )
+        return a[i][j]
     else:
+        a[i][j] = False
         return False
-        
 
 
 class Solution:
@@ -17,13 +18,8 @@ class Solution:
     def longestPalindrome( self, s: str ) -> str:
         
         a = [ [ None ] * len( s ) for i in range( len( s ) ) ]
-        ans = [ 0, 0 ]
-
-        for i in range( len( s ) ):
-            for j in range( len( s ) - i ):
-                a[j][ j + i ] = f( a, s, j, j + i )
-
+        
         for i in range( len( s ) - 1, -1, -1 ):
             for j in range( len( s ) - i ):
-                if a[j][ j + i ]:
+                if f( a, s, j, j + i):
                     return s[ j : j + i + 1 ]
