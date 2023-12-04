@@ -1,12 +1,13 @@
 import re
 
-symbol_dict = { " && ": " and ", " || ": " or "  }
-
-def symbols_to_word( match ):
+def symbol_to_word( match ):
     
-    return( symbol_dict[ match.group( 0 ) ] )
+    if match.group( 0 ) == "&&":
+        return "and"
+    else:
+        return "or"
     
     
     
 for i in range( int( input() ) ):
-    print( re.sub( r" && | \|\| ", symbols_to_word, input() ) )
+    print( re.sub( "(?<= )(&&|\|\|)(?= )", symbol_to_word, input() ) )
