@@ -1,7 +1,11 @@
 import re
 
-vowels = "AEIOUaeiou"
-pattern = f"[^{vowels}]([{vowels}]{{2,}})[^{vowels}]"
+vowels = "aeiou"
+pattern = f"(?<=[^{vowels}])[{vowels}]{{2,}}(?=[^{vowels}])"
+matches = re.findall( pattern, input(), re.IGNORECASE )
 
-for item in re.findall( pattern, input() ):
-    print( item )
+if len( matches ) > 0:
+    for match in matches:
+        print( match )
+else:
+    print( -1 )
