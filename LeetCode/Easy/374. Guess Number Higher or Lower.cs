@@ -17,7 +17,7 @@ public class Solution : GuessGame
         {
             int j = i + ( ( n - i ) / 2 );
             int k = guess( j );
-            Console.WriteLine( $"{i} {j} {n} {k}");
+            
             if ( k > 0 )
             {
                 i = j + 1;
