@@ -1,32 +1,26 @@
 from collections import defaultdict
 
-def f( a, g, s, t, v ):
-    q = []
-
-    for i in a:
-        if len( i ) < 1:
-            continue
-            
-        q.append( [] )
-
-        for j in g[ i[-1] ]:
-            if j == t:
-                return i + [ j ]
-
-            q.append( i + [ j ] )
-            v.add( j )
-
-    return f( q, g, s, t, v )
-
-
-
 def shortestPath( edges, n, m, s, t ):
     
-    g = defaultdict( list )
+    g = defaultdict( set )
+    p = [ [ s ] ]
+    v = { s }
 
     for i, j in edges:
-        g[i].append( j )
-        g[j].append( i )
+        g[i].add( j )
+        g[j].add( i )
 
-    return f( [ [ s ] ], g, s, t, set() )
+    while len( p ) > 0:
+        q = []
 
+        for i in p:
+            for j in g[ i[-1] ]:
+                if j in v:
+                    continue
+                elif j == t:
+                    return i + [ t ]
+                else:
+                    q.append( i + [ j ] )
+                    v.add( j )
+
+        p = q
