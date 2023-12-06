@@ -1,9 +1,9 @@
-def maxSubarraySum( arr, n ) :
-
+def maxSubarraySum( arr, n ):
+    
     c = m = 0
 
-    for i, j in enumerate( arr ):
-        c += j
+    for i in arr:
+        c += i
 
         if c > m:
             m = c
@@ -11,5 +11,3 @@ def maxSubarraySum( arr, n ) :
             c = 0
 
     return m
-
-
