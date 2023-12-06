@@ -1,3 +1,4 @@
+# Time limit exceeded
 from collections import *
 
 def findCelebrity( n, knows ):
