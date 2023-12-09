@@ -1,63 +1,65 @@
+# Following is the class structure of the Node class:
 class Node:
-    
-    def __init__( self, data, next = None ):
-        
+
+    def __init__( self, data ):
+
         self.data = data
-        self.next = next
-        
-        
-        
-        
+        self.next = None
 
-def f( a ):
+
+
+def addFirstAndReversedSecondHalf(head):
     
-    ans = 0
-    
-    for i in a:
-        ans = ans * 10 + i
-        
-    return ans
-
-
-
-def addFirstAndSecondHalf( head ):
-    
-    if head is None or head.next is None:
+    if head == None or head.next == None:
         return head
-    
-    a = []
-    
-    while head is not None:
-        a.append( head )
-        head = head.next
         
-    m = ( len( a ) + 1 ) // 2 - 1
-    n = len( a ) - 1 
-    o = 0
-    a[m].next = None
+    m = []
+    n = []
+    p = q = head
     
-    for i in range( n - m ):
-        a[ m - i  ].data += a[ n - i ].data + o
-        
-        if a[ m - i ].data > 9:
-            a[ m - i ].data %= 10
-            o = 1
+    while q != None:
+        m.append( p.data )
+        p = p.next
+        q = q.next
+
+        if q != None:
+            q = q.next
+
+    while p != None:
+        n.append( p. data )
+        p = p.next
+
+    n.reverse()
+    o = max( len( m ), len( n ) ) + 1
+    arr = [ 0 ] * o
+    i = -1
+    
+    if len( m ) < len( n ):
+        m, n = n, m
+
+    while i >= -len( n ):
+        p, q = divmod( m[i] + n[i], 10 )
+        arr[i] += q
+        arr[ i - 1 ] += p
+        i -= 1
+
+    while i >= -len( m ):
+        arr[i] += m[i]
+
+        if arr[i] > 9:
+            arr[i] %= 10
+            i -= 1
+            arr[i] += 1
         else:
-            o = 0
-        
-    if len( a ) % 2 > 0:
-        a[0].data += o
-        
-        if a[0].data > 9:
-            a[0].data %= 10
-            o = 1
-            
-    if o > 0:
-        head = Node( 1, a[0] )
-    else:
-        head = a[0]
-        
-    while head.data < 1 and head.next is not None:
-        head = head.next
-        
-    return head
+            i -= 1
+
+    ans = curr = Node( arr[0] )
+    
+    for i in arr[ 1 : ]:
+        curr.next = Node( i )
+        curr = curr.next
+
+    while ans.data < 1 and ans.next != None:
+        ans = ans.next
+
+    return ans
