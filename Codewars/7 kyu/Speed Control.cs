@@ -13,6 +13,6 @@ public class GpsSpeed
             m = Math.Max( m, n );
         }
         
-        return ( int ) Math.Floor( m * 3600.0 / s );
+        return ( int ) Math.Floor( m * 3600 / s );
     }
 }
