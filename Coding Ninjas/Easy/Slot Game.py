@@ -1,4 +1,4 @@
-def alotAcore( original, guess ):
+def slotScore( original, guess ):
     
     ans = 0
     c = { "R": 0, "Y": 0, "G": 0, "B": 0 }
