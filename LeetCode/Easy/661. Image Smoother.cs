@@ -16,14 +16,13 @@ public class Solution
                 int q = Math.Min( m, i + 2 );
                 int r = Math.Max( 0, j - 1 );
                 int s = Math.Min( n, j + 2 );
-                int t = 0;
                 
                 for ( int u = p; u < q; u++ )
                 {
-                    t += img[u][r..s].Sum();
+                    ans[i][j] += img[u][r..s].Sum();
                 }
 
-                ans[i][j] = t / ( ( q - p ) * ( s - r ) );
+                ans[i][j] /= ( q - p ) * ( s - r );
             }
         }
         
