@@ -22,4 +22,4 @@ def checkMeta( str1, str2 ):
             else:
                 return False
 
-    return True
+    return o == 2
