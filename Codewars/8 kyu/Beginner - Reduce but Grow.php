@@ -1,3 +1,7 @@
+<?php
+
+
+
 function grow( $a )
 {
     $product = 1;
@@ -9,3 +13,7 @@ function grow( $a )
   
     return $product;
 }
+
+
+
+?>
