@@ -1,26 +1,35 @@
+<?php
+
+
+
 class SnapshotArray
 {
     private $arr;
     private $snapshots;
     private $snap_id;
+    
     /**
      * @param Integer $length
      */
-    function __construct($length)
+    function __construct( $length )
     {
         $this->snap_id = 0;
     }
-  
+
+    
+    
     /**
      * @param Integer $index
      * @param Integer $val
      * @return NULL
      */
-    function set($index, $val)
+    function set( $index, $val )
     {
         $this->arr[$index] = $val;
     }
-  
+
+    
+    
     /**
      * @return Integer
      */
@@ -30,13 +39,15 @@ class SnapshotArray
         
         return $this->snap_id++;
     }
-  
+
+    
+    
     /**
      * @param Integer $index
      * @param Integer $snap_id
      * @return Integer
      */
-    function get($index, $snap_id)
+    function get( $index, $snap_id )
     {
         if ( isset( $this->snapshots[$snap_id][$index] ) )
         {
@@ -56,3 +67,6 @@ class SnapshotArray
  * $ret_2 = $obj->snap();
  * $ret_3 = $obj->get($index, $snap_id);
  */
+
+
+?>
