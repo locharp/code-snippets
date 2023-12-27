@@ -13,7 +13,8 @@ class Solution
         {
             if ( $colors[$i] != $colors[ $i - 1 ] )
             {
-                $i++;continue;
+                $i++;
+                continue;
             }
             
             $a = array( $neededTime[ $i - 1 ] );
