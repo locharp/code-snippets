@@ -1,3 +1,7 @@
+<?php
+
+
+
 /**
  * Definition for a singly-linked list.
  * class ListNode {
@@ -9,19 +13,20 @@
  *     }
  * }
  */
+
 class Solution
 {
-
     /**
      * @param ListNode $head
      * @return ListNode
      */
+    
     function middleNode( $head )
     {
         $count = 0;
         $curr = $head;
         
-        while ($curr->next != null)
+        while ( $curr->next != null )
         {
             $curr = $curr->next;
             $count++;
@@ -29,7 +34,7 @@ class Solution
         
         $count /= 2;
         
-        while ($count > 0)
+        while ( $count > 0 )
         {
             $head = $head->next;
             $count--;
@@ -38,3 +43,7 @@ class Solution
         return $head;
     }
 }
+
+
+
+?>
