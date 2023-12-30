@@ -1,10 +1,14 @@
+<?php
+
+
+
 class Solution
 {
-
     /**
      * @param Integer[] $nums
      * @return Integer[]
      */
+    
     function runningSum( $nums )
     {
         for ( $i = 1; $i < count( $nums ); $i++ )
@@ -15,3 +19,7 @@ class Solution
         return $nums;
     }
 }
+
+
+
+?>
