@@ -1,10 +1,14 @@
+<?php
+
+
+
 class Solution
 {
-
     /**
      * @param Integer[] $digits
      * @return Integer[]
      */
+
     function plusOne( $digits )
     {
         $digits = array_reverse( $digits );
@@ -13,9 +17,13 @@ class Solution
         for ( $i = 0; $i < count( $digits ) && $digits[$i] > 9; $i++ )
         {
             $digits[$i] = 0;
-            $digits[$i + 1] += 1;
+            $digits[ $i + 1 ] += 1;
         }
         
         return array_reverse( $digits );
     }
 }
+
+
+
+?>
