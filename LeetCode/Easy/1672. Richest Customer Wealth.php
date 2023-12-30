@@ -1,10 +1,14 @@
+<?php
+
+
+
 class Solution
 {
-
     /**
      * @param Integer[][] $accounts
      * @return Integer
      */
+    
     function maximumWealth( $accounts )
     {
         for ( $i = 0; $i < count( $accounts ); $i++ )
@@ -15,3 +19,7 @@ class Solution
         return max( $accounts );
     }
 }
+
+
+
+?>
