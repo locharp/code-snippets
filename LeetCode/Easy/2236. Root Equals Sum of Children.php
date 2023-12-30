@@ -1,3 +1,7 @@
+<?php
+
+
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -11,15 +15,20 @@
  *     }
  * }
  */
+
 class Solution
 {
-
     /**
      * @param TreeNode $root
      * @return Boolean
      */
+    
     function checkTree( $root )
     {
         return $root->val == $root->left->val + $root->right->val;
     }
 }
+
+
+
+?>
