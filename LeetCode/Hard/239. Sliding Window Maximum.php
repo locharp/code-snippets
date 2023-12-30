@@ -1,3 +1,7 @@
+<?php
+
+
+
 class Solution
 {
     function maxSlidingWindow( $nums, $k )
@@ -6,7 +10,7 @@ class Solution
         $window = array();
       
         for ( $i = 0; $i < count( $nums ); $i++  )         {
-            if ( $nums[$i] >= $nums[$window[0]] )
+            if ( $nums[$i] >= $nums[ $window[0] ] )
             {
                 $window = array ( $i );
             }
@@ -17,7 +21,7 @@ class Solution
                     array_shift( $window );
                 }
 
-                while ( !empty( $window) && $nums[end( $window )] <= $nums[$i] )
+                while ( !empty( $window ) && $nums[ end( $window ) ] <= $nums[$i] )
                 {
                     array_pop( $window );
                 }
@@ -27,10 +31,14 @@ class Solution
         
             if ( $i >= $k - 1 )
             {
-                array_push( $maxes, $nums[$window[0]] );
+                array_push( $maxes, $nums[ $window[0] ] );
             }
         }
 
         return $maxes;
     }
 }
+
+
+
+?>
