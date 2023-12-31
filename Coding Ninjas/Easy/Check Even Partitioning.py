@@ -1,6 +1,3 @@
 def checkEvenPartitioning( n ):
     
-    if n < 4:
-        return False
-    else:
-        return n % 2 < 1
+    return n > 3 and n % 2 < 1
