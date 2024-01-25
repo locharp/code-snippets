@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Solution
 {
     
@@ -22,7 +20,7 @@ public class Solution
             while( true );
         }
         
-        return Arrays.copyOfRange( ans, 0, x );
+        return ans;
     }
     
 }
