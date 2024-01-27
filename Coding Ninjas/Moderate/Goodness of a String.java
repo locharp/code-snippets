@@ -1,4 +1,3 @@
-import java.util.*;
 import java.lang.Character;
 
 public class Solution
