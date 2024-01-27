@@ -1,5 +1,3 @@
-import java.lang.Character;
-
 public class Solution
 {
 	
