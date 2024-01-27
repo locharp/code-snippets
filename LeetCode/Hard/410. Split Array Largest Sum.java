@@ -3,8 +3,7 @@ class Solution
     
     public int splitArray( int[] nums, int k )
     {
-        IntStream s = IntStream.of( nums );
-        int i = s.max().getAsInt();
+        int i = IntStream.of( nums ).max().getAsInt();
         int j = IntStream.of( nums ).sum();
         
         while ( i < j )
