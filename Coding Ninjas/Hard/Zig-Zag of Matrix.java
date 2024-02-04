@@ -8,66 +8,55 @@ public class Solution
 	{	
 		ArrayList< Integer > ans =
 		    new ArrayList<>();
-		ArrayList< Integer > o =
-			new ArrayList<>();
 		ans.add( mat[0][0] );
-		o.add( 0 );
-		o.add( 0 );
-		o.add( 0 );
-		o.add( 0 );
+		int i = 0;
+		int j = 0;
+		int p = 0;
+		int q = 0;
 		n--;
 		m--;
 
-		while ( o.get( 0 ) != n || o.get( 1 ) != m )
+		while ( i != n || j != m )
 		{
-			if ( o.get( 1 ) == m )
+			if ( j == m )
 			{
-				o.set( 0, o.get( 0 ) + 1 );
-				o.set( 2, 1 );
-				o.set( 3, -1 );
+				i++;
+				p = 1;
+				q = -1;
 			}
-			else if ( o.get( 0 ) < 1 )
+			else if ( i < 1 )
 			{
-				o.set( 1, o.get( 1 ) + 1 );
-				o.set( 2, 1 );
-				o.set( 3, -1 );
+				j++;
+				p = 1;
+				q = -1;
 			}
-			else if ( o.get( 0 ) == n )
+			else if ( i == n )
 			{
-				o.set( 1, o.get( 1 ) + 1 );
-				o.set( 2, -1 );
-				o.set( 3, 1 );
+				j++;
+				p = -1;
+				q = 1;
 			}
 			else
 			{
-				o.set( 0, o.get( 0 ) + 1 );
-				o.set( 2, -1 );
-				o.set( 3, 1 );
+				i++;
+				p = -1;
+				q = 1;
 			}
 			
-			ans.add( mat[ o.get( 0 ) ][ o.get( 1 ) ] );
-			o( ans, o, mat );
+			ans.add( mat[i][j] );
+			
+			while ( i + p >= 0
+				 && i + p  <= n
+				 && j + q  >= 0
+				 && j + q  <= m )
+			{
+				i += p;
+				j += q;
+				ans.add( mat[i][j] );
+			}
 		}
 
 		return ans;
 	}
-
-
-
-	static void o
-	( ArrayList< Integer > ans,
-	  ArrayList< Integer > o,
-	  int[][] mat )
-	{
-		while ( o.get( 0 ) + o.get( 2 ) >= 0
-		     && o.get( 0 ) + o.get( 2 )  <= mat.length - 1
-		     && o.get( 1 ) + o.get( 3 )  >= 0
-			 && o.get( 1 ) + o.get( 3 )  <= mat[0].length - 1 )
-		{
-			o.set( 0, o.get( 0 ) + o.get( 2 ) );
-			o.set( 1, o.get( 1 ) + o.get( 3 ) );
-			ans.add( mat[ o.get( 0 ) ][ o.get( 1 ) ] );
-		}
-	}
-
+	
 }
