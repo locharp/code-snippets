@@ -5,6 +5,8 @@ public class Solution
 
     static HashMap< String, TreeSet< Integer > > map =
         new HashMap<>();
+
+
     
     public static void receiveMessage
     ( String user, int time )
