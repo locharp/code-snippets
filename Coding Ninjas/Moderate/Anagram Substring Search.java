@@ -7,20 +7,37 @@ public class Solution
 	( String str, String ptn, int n, int m )
 	{
 		ArrayList< Integer > ans = new ArrayList<>();
+		HashMap< Character, Integer > map1 = new HashMap<>();
+		HashMap< Character, Integer > map2 = new HashMap<>();
 		char[] s = str.toCharArray();
-		char[] t = ptn.toCharArray();
-		Arrays.sort( t );
-		int o = t.length;
-		int p = s.length - o;
 
-		for ( int i = 0; i <= p; i++ )
+		for ( int i = 0; i < m; i++ )
 		{
-			char[] r = Arrays.copyOfRange( s, i, i + o );
-			Arrays.sort( r );
-			
-			if ( Arrays.equals( r, t ) )
+			map1.put( ptn.charAt( i ), map1.getOrDefault( ptn.charAt( i ), 0 ) + 1 );
+			map2.put( s[i], map2.getOrDefault( s[i], 0 ) + 1 );
+		}
+
+		if ( map1.equals( map2 ) )
+		{
+			ans.add( 0 );
+		}
+
+		for ( int i = 0, j = m; j < n; i++, j++ )
+		{
+			if ( map2.get( s[i] ).equals( 1 ) )
 			{
-				ans.add( i );
+				map2.remove( s[i] );
+			}
+			else
+			{
+				map2.put( s[i], map2.get( s[i] ) - 1 );
+			}
+
+			map2.put( s[j], map2.getOrDefault( s[j], 0 ) + 1 );
+
+			if ( map1.equals( map2 ) )
+			{
+				ans.add( i + 1 );
 			}
 		}
 
