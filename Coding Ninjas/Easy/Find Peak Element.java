@@ -2,56 +2,44 @@ import java.util.ArrayList;
 
 public class Solution
 {
-
     public static int findPeakElement
     ( ArrayList< Integer > arr )
     {
-        for ( int i = arr.size() - 1; i > 0; i-- )
-        {
-            if ( arr.get( i ) > arr.get( i - 1 ) )
-            {
-                return i;
-            }
-        }
+        int j = arr.size() - 1;
+        int i = 1;
 
-        return 0;
-    }
-
-}
-
-
-
-
-
-import java.util.ArrayList;
-public class Solution
-{
-
-    public static int findPeakElement
-    ( ArrayList< Integer > arr )
-    {
-        int n = arr.size();
-        int m = arr.size() - 1;
-
-        if ( n < 2 || arr.get( 0 ) > arr.get( 1 ) )
+        if ( j < 1 || arr.get( 0 ) > arr.get( 1 ) )
         {
             return 0;
         }
-        else if ( arr.get( m ) > arr.get( m - 1 ) )
+        else if ( arr.get( j ) > arr.get( j - 1 ) )
         {
-            return m;
+            return j;
         }
-
-        for ( int i = 1; i < m; i++ )
+        
+        while ( i < j )
         {
-            if ( arr.get( i ) > arr.get( i + 1 )
-                && arr.get( i ) > arr.get( i - 1 ) )
+            int k = ( i + j ) / 2;
+
+            if ( arr.get( k ) > arr.get( k - 1 ) )
             {
-                return i;
+                if ( arr.get( k ) > arr.get( k + 1 ) )
+                {
+                    i = k;
+                    j = k;
+                }
+                else
+                {
+                    i = k + 1;
+                }
+            }
+            else
+            {
+                j = k - 1;
             }
         }
-
-        return -1;
+        
+        return i;
     }
 
 }
