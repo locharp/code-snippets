@@ -1,4 +1,29 @@
 import java.util.ArrayList;
+
+public class Solution
+{
+
+    public static int findPeakElement
+    ( ArrayList< Integer > arr )
+    {
+        for ( int i = arr.size() - 1; i > 0; i-- )
+        {
+            if ( arr.get( i ) > arr.get( i - 1 ) )
+            {
+                return i;
+            }
+        }
+
+        return 0;
+    }
+
+}
+
+
+
+
+
+import java.util.ArrayList;
 public class Solution
 {
 
