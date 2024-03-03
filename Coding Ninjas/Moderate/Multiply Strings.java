@@ -1,5 +1,3 @@
-//import jdk.internal.agent.resources.agent_ja;
-
 public class Solution
 {
 
